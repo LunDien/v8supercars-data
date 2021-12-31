@@ -4,12 +4,7 @@ const brandsModel = require('../models/brandsModel')
 
 class appAPIController {
     getPage(req, res, next) {
-        carsModel.find({})
-            .then(cars => {
-                res.send(cars)
-                res.status(200)
-            })
-            .catch(next)
+        render('home')
     }
 
     getCars(req, res, next) {
