@@ -8,7 +8,7 @@ var db = require('./db')
 var router = require('./routes')
 var app = express();
 var bodyParser = require('body-parser');
-
+ 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
