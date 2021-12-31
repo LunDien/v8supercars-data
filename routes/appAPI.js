@@ -44,12 +44,12 @@ const upload = multer({ storage: storage, limits: {fileSize: "maxSize"}, fileFil
 const uploadLogo = multer({ storage: brandsStorage, limits: {fileSize: "maxSize"} })
 
 
-Router.get('/getCars', appAPIController.getCars)
-Router.get('/getVideos', appAPIController.getVideos)
-Router.get('/getBrands', appAPIController.getBrands)
+Router.get('/getcars', appAPIController.getCars)
+Router.get('/getvideos', appAPIController.getVideos)
+Router.get('/getbrands', appAPIController.getBrands)
 Router.get('/', appAPIController.getPage)
-Router.post('/createCars', upload.array('images', 10), appAPIController.createCars)
-Router.post('/createVideos', upload.none(), appAPIController.createVideos)
-Router.post('/createBrands', uploadLogo.fields([{name : 'imageURL', maxCount: 4}, {name: 'logoURL', maxCount: 1}, {name: 'bigLogoURL', maxCount: 1}]), appAPIController.createBrands)
+Router.post('/createcars', upload.array('images', 10), appAPIController.createCars)
+Router.post('/createvideos', upload.none(), appAPIController.createVideos)
+Router.post('/createbrands', uploadLogo.fields([{name : 'imageURL', maxCount: 4}, {name: 'logoURL', maxCount: 1}, {name: 'bigLogoURL', maxCount: 1}]), appAPIController.createBrands)
 
 module.exports = Router
