@@ -9,15 +9,6 @@ var router = require('./routes')
 var app = express();
 var bodyParser = require('body-parser');
 
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://admin:lundien3003@cluster0.uw8aj.mongodb.net/v8supercars?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log("connect successfully")
-  client.close();
-});
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
