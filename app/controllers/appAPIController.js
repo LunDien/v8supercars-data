@@ -6,7 +6,7 @@ class appAPIController {
     getPage(req, res, next) {
         carsModel.find({})
             .then(cars => {
-                res.json(cars)
+                res.send(cars)
                 res.status(200)
             })
             .catch(next)
